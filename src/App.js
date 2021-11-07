@@ -2,7 +2,8 @@ import React from 'react'
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 import { Layout, Typography, Space } from 'antd'
-import { Navbar } from './Components'
+import { Navbar, Homepage, Exchanges, CryptoCurrencies, CryptoDetails, News } from './Components'
+import { whileStatement } from '@babel/types'
 
 const App = () => {
   return (
@@ -14,26 +15,26 @@ const App = () => {
         <Layout>
           <div className="routes">
             <Routes>
-              <Route exact path="/">
-                <Homepage />
-              </Route>
-              <Route exact path="/exchanges">
-                <Exchanges />
-              </Route>
-              <Route exact path="/cryptocurrencies">
-                <CryptoCurrencies />
-              </Route>
-              <Route exact path="/crypto/:coinId">
-                <CryptoDetails />
-              </Route>
-              <Route exact path="/news">
-                <News />
-              </Route>
+              <Route exact path="/" element={<Homepage />} />
+              <Route path="/exchanges" element={<Exchanges />} />
+              <Route path="/cryptocurrencies" element={<CryptoCurrencies />} />
+              <Route path="/crypto/:coinId" element={<CryptoDetails />} />
+              <Route path="/news" element={<News />} />
             </Routes>
           </div>
         </Layout>
+        <div className="footer">
+          <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>
+            CryptoCurrencies <br />
+            All right reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </div>
       </div>
-      <div className="footer"></div>
     </div>
   )
 }
