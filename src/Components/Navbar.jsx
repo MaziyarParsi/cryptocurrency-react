@@ -28,8 +28,7 @@ const Navbar = () => {
        <Link to='/exchanges'>Exchanges</Link>
       </Menu.Item>
       
-    </Menu>
-   
+    </Menu>  
    
   </div>
  )
