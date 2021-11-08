@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import {Select,Typography,Row,Col,Avatar,Card, Input} from 'antd'
 import moment from 'moment'
 import {useGetCryptoNewsQuery} from '../services/CryptoNewsApi'
+import {Loader} from '../Components'
 
 
 
@@ -14,7 +15,7 @@ const News = ({simpilified}) => {
  const [newsCategory, setNewsCategory] = useState('Cryptocurrency')
 const { data:cryproNews}=useGetCryptoNewsQuery({newsCategory:newsCategory,count:simpilified?6:12})
 
- if(!cryproNews?.value) return 'Loading...'
+ if(!cryproNews?.value) return <Loader/>
 
 
   return (
