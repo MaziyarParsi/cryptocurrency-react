@@ -31,7 +31,7 @@ const CryptoCurrencies = ({simpilified}) => {
           {cryptos?.map((currency)=>{
            return (
             <Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.id}>
-             <Link to={`/crypto/${currency.id}`}></Link>
+             <Link to={`/crypto/${currency.id}`}>
                    <Card title={`${currency.rank}. ${currency.name}`} 
                          extra={<img className="crypto-image" 
                          src={currency.iconUrl}/>} 
@@ -41,6 +41,7 @@ const CryptoCurrencies = ({simpilified}) => {
                           <p> Daily change = {millify(currency.change)}%</p>
 
                    </Card>
+               </Link>
             </Col>
            )
           })}

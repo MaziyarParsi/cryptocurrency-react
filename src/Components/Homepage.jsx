@@ -18,7 +18,7 @@ const Homepage = ( ) => {
 if(isFetching) return 'Loading...'
  return (
   <>
-  <Title level={2} className='heading'>Global Crypto stats</Title>
+  <Title level={2} className='heading' >Global Crypto stats</Title>
   <Row>
      <Col span={12} >
        <Statistic title='Total Cryptocurrencies' value={millify(globalStats.total)}/>
@@ -39,7 +39,7 @@ if(isFetching) return 'Loading...'
 
   <div className="home-heading-container">
     <Title level={2} className="home-title">Top 10 CryptoCurrency in the world</Title>
-    <Title level={3} className="show-more"><Link to='/cryptoCurrencies'>Show more</Link></Title>
+    <Title level={3} className="show-more"><Link to='/cryptocurrencies'>Show more</Link></Title>
   </div>
   <CryptoCurrencies simpilified/>
   <div className="home-heading-container">
